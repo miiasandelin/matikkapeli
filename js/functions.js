@@ -28,7 +28,7 @@ const incrementScore = (result) => {
 }
 
 const calculateWinRate = (correct, incorrect) => {
-    winRate = (correct / (correct + incorrect)) * 100
+    winRate = Math.round((correct / (correct + incorrect)) * 100);
     document.querySelector('#winrate').innerHTML = winRate
 }
 
