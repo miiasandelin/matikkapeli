@@ -2,6 +2,7 @@ let rand_num1 = 0
 let rand_num2 = 0
 let correct = 0
 let incorrect = 0
+let winRate = 0
 
 const getRandomIntNumberInRange = (min,max) => {
     return Math.floor(Math.random() * max) + min;
@@ -22,6 +23,13 @@ const incrementScore = (result) => {
         incorrect++
         document.querySelector('#incorrect').innerHTML = incorrect
     }
+
+    calculateWinRate(correct, incorrect)
+}
+
+const calculateWinRate = (correct, incorrect) => {
+    winRate = (correct / (correct + incorrect)) * 100
+    document.querySelector('#winrate').innerHTML = winRate
 }
 
 addEventListener("DOMContentLoaded", () => {
